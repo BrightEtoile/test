@@ -14,6 +14,12 @@
 
 
     <script>
+        // function sleep(ms) {
+        //     return new Promise((resolve) => {
+        //         setTimeout(resolve, ms);
+        //     });
+        // }
+
         async function sleep(ms) {
             await new Promise((resolve) => {
                 setTimeout(resolve, ms);
@@ -57,7 +63,6 @@
             let foo2 = await fooPromise;
             let bar2 = await barPromise;
             console.log('triggerSimultaneously two cost: ' + (Date.now() - startTime));
-
         }
 
         triggerSequentially();
