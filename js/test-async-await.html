@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello Brighton</h1>
+
+
+    <script>
+        async function sleep(ms) {
+            await new Promise((resolve) => {
+                setTimeout(resolve, ms);
+            });
+        }
+
+        async function getFoo() {
+            console.log('getFoo start');
+            await sleep(1000);
+            console.log('getFoo done');
+
+        }
+
+        async function getBar() {
+            console.log('getBar start');
+            await sleep(2000);
+            console.log('getBar done');
+        }
+
+        // 多个await命令后面的异步操作，如果不存在继发关系，最好让它们同时触发。
+        async function triggerSequentially() {
+            const startTime = Date.now();
+            let foo = await getFoo();
+            let bar = await getBar();
+            console.log('triggerSequentially cost: ' + (Date.now() - startTime));
+        }
+
+        async function triggerSimultaneously() {
+            // 写法一
+            let startTime = Date.now();
+            let [foo, bar] = await Promise.all([getFoo(), getBar()]);
+            console.log('triggerSimultaneously cost: ' + (Date.now() - startTime));
+
+            // 写法二
+            console.log('triggerSimultaneously two: ');
+            startTime = Date.now();
+
+            let fooPromise = getFoo();
+            let barPromise = getBar();
+            console.log('triggerSimultaneously two: got promises');
+            let foo2 = await fooPromise;
+            let bar2 = await barPromise;
+            console.log('triggerSimultaneously two cost: ' + (Date.now() - startTime));
+
+        }
+
+        triggerSequentially();
+
+        triggerSimultaneously();
+
+    </script>
+</body>
+
+</html>
