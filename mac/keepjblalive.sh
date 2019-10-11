@@ -1,0 +1,1 @@
+afplay -v 1 -t 1 /Users/Brighton/JDL300/GitHub/cavy/mac/42-Rain-10min.mp3

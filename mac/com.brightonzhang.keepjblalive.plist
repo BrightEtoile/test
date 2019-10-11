@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.brightonzhang.keepjblalive</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/Brighton/JDL300/GitHub/cavy/mac/keepjblalive.sh</string>
+  </array>
+
+  <key>StartInterval</key>
+  <integer>590</integer>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/Brighton/Library/Logs/keepjblalive.err</string>
+
+  <key>StandardOutPath</key>
+  <string>/Users/Brighton/Library/Logs/keepjblalive.out</string>
+</dict>
+</plist>
