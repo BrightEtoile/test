@@ -116,3 +116,6 @@ export ANDROID_AVD_HOME='/Users/Brighton/jetdrive/.android/avd/'
 
 # https://docs.gradle.org/current/userguide/build_environment.html
 export GRADLE_USER_HOME='/Users/Brighton/jetdrive/.gradle'
+
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
