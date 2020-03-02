@@ -119,3 +119,9 @@ export GRADLE_USER_HOME='/Users/Brighton/jetdrive/.gradle'
 
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Volumes/JDL330/google-cloud-sdk/path.zsh.inc' ]; then . '/Volumes/JDL330/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Volumes/JDL330/google-cloud-sdk/completion.zsh.inc' ]; then . '/Volumes/JDL330/google-cloud-sdk/completion.zsh.inc'; fi
